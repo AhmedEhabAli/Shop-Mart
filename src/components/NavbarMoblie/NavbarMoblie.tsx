@@ -28,9 +28,9 @@ export default function NavbarMobile({
   cartData,
   wishlistData,
 }: {
-  session: Session;
-  cartData: CartRes;
-  wishlistData: WishlistRes;
+  session: Session | null;
+  cartData: CartRes | null;
+  wishlistData: WishlistRes | null;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuItems = ["products", "brands", "categories"];
