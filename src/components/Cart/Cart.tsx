@@ -144,7 +144,7 @@ export default function Cart({ cartData }: { cartData: CartRes | null }) {
                   <span>{formatCurrency(cart.data.totalCartPrice)}</span>
                 </div>
 
-                <CheckOut cartId={cartData?.cartId} />
+                <CheckOut cartId={cartData?.cartId as string} />
               </div>
 
               <div className="flex justify-end">
@@ -178,7 +178,7 @@ export default function Cart({ cartData }: { cartData: CartRes | null }) {
               Your cart is empty
             </h2>
             <p className="text-gray-400 text-sm">
-              Looks like you haven't added anything yet
+              Looks like you haven&apos;t added anything yet
             </p>
           </div>
 

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { addtoWishlistAction } from "@/action/addWishlist.action";
 import { removeProductAction } from "@/action/wishlistAction";
 import { WishlistRes } from "@/interfaces/WishlistInterface";
+import Error from "next/error";
 
 export default function AddToCart({
   productId,
@@ -76,8 +77,7 @@ export default function AddToCart({
           toast.error(data.message || "Failed to add to wishlist");
         }
       }
-    } catch (err: any) {
-      console.error(err);
+    } catch (err) {
       toast.error(err.message || "Something went wrong");
     }
   }

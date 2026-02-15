@@ -11,6 +11,7 @@ import {
 import { formatCurrency } from "@/Helpers/formatCurrency";
 
 import { Product } from "@/interfaces/ProductInterface";
+import { WishlistRes } from "@/interfaces/WishlistInterface";
 import { Star, StarOff } from "lucide-react";
 import { getServerSession } from "next-auth";
 import { Params } from "next/dist/server/request/params";
@@ -25,7 +26,7 @@ export default async function ProductDetails({ params }: { params: Params }) {
       token: session?.token as string,
     },
   });
-  const wishlistData = await wishlistRes.json();
+  const wishlistData: WishlistRes = await wishlistRes.json();
   const wishlistIds: string[] = wishlistData?.data?.map((p) => p.id) ?? [];
   return (
     <>

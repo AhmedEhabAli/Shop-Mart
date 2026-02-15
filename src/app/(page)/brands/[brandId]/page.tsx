@@ -14,6 +14,7 @@ import AddToCart from "@/components/AddToCart/AddToCart";
 import { formatCurrency } from "@/Helpers/formatCurrency";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
+import { WishlistRes } from "@/interfaces/WishlistInterface";
 export default async function BrandsDetails({ params }: { params: Params }) {
   const { brandId } = await params;
   const res = await fetch(`${process.env.BASE_URL}/products?brand=${brandId}`);
@@ -25,7 +26,7 @@ export default async function BrandsDetails({ params }: { params: Params }) {
       token: session?.token as string,
     },
   });
-  const wishlistData = await wishlistRes.json();
+  const wishlistData: WishlistRes = await wishlistRes.json();
   const wishlistIds: string[] = wishlistData?.data?.map((p) => p.id) ?? [];
   return (
     <div className="pt-20">

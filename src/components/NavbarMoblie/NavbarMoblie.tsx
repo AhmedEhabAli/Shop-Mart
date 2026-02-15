@@ -19,8 +19,19 @@ import {
 import LogOut from "../LogOut/LogOut";
 import CartIcon from "../CartIcon/CartIcon";
 import WishlistIcon from "../WishlistIcon/WishlistIcon";
+import { CartRes } from "@/interfaces/CartInterface";
+import { WishlistRes } from "@/interfaces/WishlistInterface";
+import { Session } from "next-auth";
 
-export default function NavbarMobile({ session, cartData, wishlistData }) {
+export default function NavbarMobile({
+  session,
+  cartData,
+  wishlistData,
+}: {
+  session: Session;
+  cartData: CartRes;
+  wishlistData: WishlistRes;
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuItems = ["products", "brands", "categories"];
 

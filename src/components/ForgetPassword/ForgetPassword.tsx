@@ -125,8 +125,8 @@ export default function ForgetPassword() {
                 <DialogTitle>Reset Your Password</DialogTitle>
               </div>
               <DialogDescription>
-                Enter your email and we'll send you a 6-digit code to reset your
-                password.
+                Enter your email and we&apos;ll send you a 6-digit code to reset
+                your password.
               </DialogDescription>
             </DialogHeader>
 

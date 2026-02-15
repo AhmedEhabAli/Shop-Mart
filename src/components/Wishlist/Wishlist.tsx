@@ -86,7 +86,7 @@ export default function Wishlist({
               Your wishlist is empty
             </h2>
             <p className="text-gray-400 text-sm">
-              Looks like you haven't added anything yet
+              Looks like you haven&apos;t added anything yet
             </p>
           </div>
         </div>
