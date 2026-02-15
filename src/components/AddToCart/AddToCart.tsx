@@ -78,7 +78,7 @@ export default function AddToCart({
         }
       }
     } catch (err) {
-      toast.error(err.message || "Something went wrong");
+      console.log(err);
     }
   }
 
