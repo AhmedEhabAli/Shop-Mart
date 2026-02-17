@@ -27,12 +27,12 @@ export default function AddToCart({
     try {
       setLoading(true);
       const data = await addtoCartAction(productId);
+            if (data == null) {
+        router.push("/login");
+      }
       dispatchEvent(
         new CustomEvent("cartUpdate", { detail: data.numOfCartItems }),
       );
-      if (data == null) {
-        router.push("/login");
-      }
       toast.success(`${data.message}`);
       setLoading(false);
     } catch (err) {
